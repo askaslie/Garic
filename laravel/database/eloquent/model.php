@@ -795,4 +795,15 @@ abstract class Model {
 		return call_user_func_array(array(new $model, $method), $parameters);
 	}
 
+    public function get_times()
+    {
+        if( isset( $this->created_at )) {
+            $this->created_at = new \DateTime( $this->created_at );
+        }
+
+        if( isset( $this->updated_at )) {
+            $this->updated_at = new \DateTime( $this->updated_at );
+        }
+    }
+
 }

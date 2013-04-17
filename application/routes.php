@@ -110,3 +110,11 @@ Route::filter('auth', function()
 {
 	if (Auth::guest()) return Redirect::to('login');
 });
+
+Route::controller('main');
+
+Route::get('/', function()
+{
+    return Redirect::to('main');
+});
+
